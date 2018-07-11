@@ -18,5 +18,5 @@ public class DateTime {
 	    String strDate = sdf.format(now);
 	    return strDate;
 	}
-	//test 
+	//test 1
 }
