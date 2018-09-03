@@ -1,4 +1,10 @@
 <itmc_db_config>
+
+	<CHK_FOLDER>
+	<Path>C:\Test\F1</Path>
+	</CHK_FOLDER>
+	
+	
 	<db>
 		<user>WMCDB</user>
 		<password>WMCDB</password>

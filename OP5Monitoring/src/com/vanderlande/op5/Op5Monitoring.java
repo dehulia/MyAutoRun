@@ -16,8 +16,8 @@ public class Op5Monitoring {
 		// TODO Auto-generated method stub
 	    
 		try {
-	        String argFunction = args[0]; // "DB" ;   FMC, DB, SVS, MSG "SVS" ; "MSG";  "TABLESPACE"; "CHK_DISK";
-	        String argUser = args[1]; // "ASRHB"; //args[1]; "nscp";// "WMCDB";//
+	        String argFunction = "CHK_FOLDER"; //args[0]; // "DB" ;   FMC, DB, SVS, MSG "SVS" ; "MSG";  "TABLESPACE"; "CHK_DISK";
+	        String argUser = "C:\\Test\\Files" ; //args[1]; // "ASRHB"; //args[1]; "nscp";// "WMCDB";//
 	        
 	        if(argFunction.equals("FMC"))
 	        {
@@ -227,6 +227,41 @@ public class Op5Monitoring {
         
         	System.out.print(output); 
         
+        }else if(argFunction.equals("CHK_FOLDER"))
+        {       	
+        	/* This section will check if the folder containing some file
+        	 * then it will copy the file and move it to processed directory 
+        	 * and fail the service*/
+        	String folder_path = "C:\\Test\\Files";
+
+    		NodeList nList;
+    		XMLParcing myXMLfile = new XMLParcing();
+    		nList = myXMLfile.ReadMyXMLFile(argFunction);
+     
+    		try{
+    		Element eElement;
+    		
+        	Node nNode = nList.item(0);
+	    	eElement = (Element) nNode;
+	    	if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+	    		folder_path = eElement.getElementsByTagName("Path").item(0).getTextContent();
+                }
+    		}catch(Exception e)
+    		{
+    			folder_path = "C:\\Test\\Files";
+    		}
+    		
+    		LogFoundInFolder log = new LogFoundInFolder();
+    		
+    		boolean output = log.CheckLogFolder(folder_path);
+        
+    		if (output){
+    			//File(s) found at folder_path 
+    			System.out.print("ActiveMQ error files found at " + folder_path); 
+    		}else{
+    			//file NOT found at folder_path 
+        	System.out.print("Healthy"); 
+    		}
         }else
 	        	System.out.print("Invalid Argument : - " + argFunction );
 	        

@@ -4,6 +4,11 @@
 		<Warning>11</Warning>
 		<Critical>6</Critical>
 	</CHK_DISK>
+	
+	<CHK_FOLDER>
+	<Path>C:\Test\F1</Path>
+	</CHK_FOLDER>
+	
 	<db>
 		<user>ASRHB</user>
 		<password>ASRHB</password>

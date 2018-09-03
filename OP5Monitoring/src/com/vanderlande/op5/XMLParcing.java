@@ -7,7 +7,6 @@ import org.w3c.dom.NodeList;
 
 import java.io.File;
 
-
 public class XMLParcing {
 
 	File file;
@@ -42,6 +41,9 @@ public class XMLParcing {
 				nList = doc.getElementsByTagName("CHK_DISK");
 			else if (condition.equals("SVS"))
 				nList = doc.getElementsByTagName("svs");
+			else if (condition.equals("CHK_FOLDER"))
+				nList = doc.getElementsByTagName("CHK_FOLDER");
+	    	
 	    	} catch (Exception e) {
 	    	e.printStackTrace();
 	        }
