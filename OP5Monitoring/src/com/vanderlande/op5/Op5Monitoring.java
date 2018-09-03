@@ -16,8 +16,8 @@ public class Op5Monitoring {
 		// TODO Auto-generated method stub
 	    
 		try {
-	        String argFunction = "CHK_FOLDER"; //args[0]; // "DB" ;   FMC, DB, SVS, MSG "SVS" ; "MSG";  "TABLESPACE"; "CHK_DISK";
-	        String argUser = "C:\\Test\\Files" ; //args[1]; // "ASRHB"; //args[1]; "nscp";// "WMCDB";//
+	        String argFunction =args[0]; // "CHK_FOLDER"; "DB" ;   FMC, DB, SVS, MSG "SVS" ; "MSG";  "TABLESPACE"; "CHK_DISK";
+	        String argUser = args[1]; //"C:\\Test\\Files" "ASRHB"; //args[1]; "nscp";// "WMCDB";//
 	        
 	        if(argFunction.equals("FMC"))
 	        {
