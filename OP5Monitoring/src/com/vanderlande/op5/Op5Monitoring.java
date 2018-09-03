@@ -257,7 +257,7 @@ public class Op5Monitoring {
         
     		if (output){
     			//File(s) found at folder_path 
-    			System.out.print("ActiveMQ error files found at " + folder_path); 
+    			System.out.print("CRITICAL - ActiveMQ error files found at " + folder_path); 
     		}else{
     			//file NOT found at folder_path 
         	System.out.print("Healthy"); 
