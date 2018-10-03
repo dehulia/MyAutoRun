@@ -72,7 +72,7 @@ public class JobClass {
 		Thread.sleep(200);
 		System.out.println(DateTime.getCurrentTimeStamp()  +ANSI_YELLOW + " : Info : -> Sucessfully logged into Jenkins" + ANSI_RESET );
 		logger.info(" : Info : main-panel");
-		 driver.findElement(By.xpath("//*[@id='main-panel']/div[2]/div[1]/div[6]/a")).click();
+		 driver.findElement(By.xpath("//*[@id='main-panel']/div[2]/div[1]/div[7]/a")).click();
 		System.out.println(DateTime.getCurrentTimeStamp() +ANSI_YELLOW + " : Info : -> Project " + ANSI_RESET );
 		 Thread.sleep(200);
 		 logger.info(" : Info : DevOps");
